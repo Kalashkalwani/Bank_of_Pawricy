@@ -1,0 +1,108 @@
+{% extends 'layout.html' %}
+
+{% block title %}Bank of Lakhs{% endblock %}
+
+{% block css %}
+
+
+
+{% endblock  %}
+
+
+
+{% block body1 %}
+{% load static %}
+<div class="container-fluid m-0 p-0" id="c1">
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'img/18.jpg' %}" id = "img-1" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block color1">
+        <h5>Warm Welcome!</h5>
+        <p>From the Best Financial Group - Bank of Lakhs</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/12.jpg' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block color1">
+        <h5>Namaste!</h5>
+        <p> सर्वश्रेष्ठ वित्तीय संस्थान द्वारा, आपका स्वागत है!</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/16.jpg' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block color1">
+        <h5>Swagatam!</h5>
+        <p>Be-aware, Covid-19 is not over yet. Be Safe!</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+</div>
+
+{% endblock  %}
+{% block body2 %}
+<div class="card mb-3 cen " >
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{% static 'img/20.jpg' %}" class="fix" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body mx-2">
+        <h5 class="card-title">This is we - (Yeh Hum Hai)</h5>
+        <p class="card-text">The evolution of  Bank of Lakhs can be traced back to the first decade of the 20th century. An important turning point in the history of Bank of Lakhs is the launch of the second Five Year Plan of independent India, in 1956</p>
+        <p class="card-text"><small class="text-muted">All data is imaginary {fake}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mb-3 cen " >
+  <div class="row g-0">
+    
+    <div class="col-md-8">
+      <div class="card-body mx-2">
+        <h5 class="card-title">This is our Internship (yeh hamari internship hai)</h5>
+        <p class="card-text">A unique global, multicultural & rare diverse working environment available for interns. They are located across the world and ensure successful projects.</p>
+        <p class="card-text"><small class="text-muted">Enrolled Under GRIP</small></p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img src="{% static 'img/31.jpeg' %}" class="fix" alt="...">
+    </div>
+  </div>
+</div>
+<div class="card mb-3 cen " >
+  <div class="row g-1">
+    <div class="col-md-4">
+      <img src="{% static 'img/40.jpg' %}" class="fix" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body mx-2">
+        <h5 class="card-title">And here's getting programming. (aur yehan programming ho rahi hai)</h5>
+        <p class="card-text">I have used HTML/CSS/Bootstrap-5 for Front-end Designing , SQlite-3 for Database and Django framework of Python for Back-end Programming.</p>
+        <p class="card-text"><small class="text-muted">Task-1 :- Simple Banking System</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock  %}

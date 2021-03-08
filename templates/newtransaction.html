@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block title %}New Transactions{% endblock %}
+
+ {% block css %}
+
+.foo{
+    background-color: #e2e7ebfc;
+}
+  {% endblock  %}
+
+{% block body1 %}
+{% load static %}
+<div class="container-fluid m-0 p-0" id="c1">
+<div class="carousel-item active">
+      <img src="{% static 'img/55.jpg' %}" id = "img-1" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block color1">
+        <h5>New Transaction</h5>
+        <p>New Era of Digital Transactions</p>
+      </div>
+    </div>
+</div>
+{% endblock  %}
+
+
+{% block body2 %}
+<form class="row g-3" style="text-align: center;" method="post" Action="/newtransaction">
+{% csrf_token %}
+  <div class="col-md-6">
+    <label for="inputState" class="form-label">Sender</label>
+    <select id="inputState" name="sender" class="form-select">
+    {% if x %}
+    <option value={{x.sno}} selected Disable>{{x.Name}}({{x.Account_no}})</option>
+    
+     
+     {% else %}
+     <option value=0 selected>Choose...</option>
+    {% for a in acc %}
+     
+      <option value = {{a.sno}} >{{a.Name}}({{a.Account_no}})</option>
+      {% endfor %}
+        {% endif %}
+    </select>
+  </div>
+
+   <div class="col-md-6">
+    <label for="inputState" class="form-label">Receiver</label>
+    <select id="inputState" name="receiver" class="form-select">
+      <option value=0 selected>Choose...</option>
+      {% for a in acc %}
+      <option value = {{a.sno}} >{{a.Name}}({{a.Account_no}})</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-12">
+    <label for="inputAmount" class="form-label">Amount</label>
+    <input type="number" name="Amount" class="form-control" id="inputAmount" required placeholder="5000">
+  </div>
+  
+
+  
+  
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Transfer</button>
+  </div>
+</form>
+{% endblock  %}

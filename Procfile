@@ -1,0 +1,1 @@
+web: gunicorn SBS.wsgi --log-file -

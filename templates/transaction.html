@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% block title %}All Transactions{% endblock %}
+
+ {% block css %}
+
+.table-success
+{
+     --bs-table-bg: #f9fafb;
+    --bs-table-striped-bg: #e5e7e7;
+}
+  {% endblock  %}
+
+{% block body1 %}
+{% load static %}
+<div class="container-fluid m-0 p-0" id="c1">
+<div class="carousel-item active">
+      <img src="{% static 'img/51.jpg' %}" id = "img-1" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block color1 mt-2">
+        <h5 style>Transactions</h5>
+        <p>Details of All Transactions</p>
+      </div>
+    </div>
+</div>
+{% endblock  %}
+
+{% block body2 %}
+<table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Sender</th>
+      <th scope="col">Receiver</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Date</th>
+      <th scope="col">Status</th>
+ 
+    </tr>
+  </thead>
+  <tbody>
+  {% for t in trans %}
+    <tr>
+      <th scope="row">{{t.sno}}</th>
+      <td>{{t.sender_acc}}</td>
+      <td>{{t.receiver_acc}}</td>
+      <td>{{t.Amount}}</td>
+      <td>{{t.date}}</td>
+      {% if t.status %}
+      <td>Success</td>
+       {% else %}
+      <td>Failed</td>
+      {% endif %}
+     
+      
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock  %}

@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block title %}Accounts{% endblock %}
+
+{% block css %}
+
+.table-success
+{
+--bs-table-bg: #d5d1e7;
+--bs-table-striped-bg: #ededed;
+}
+
+{% endblock %}
+
+{% block body1 %}
+{% load static %}
+
+<div class="container-fluid m-0 p-0" id="c1">
+    <div class="carousel-item active">
+        <img src="{% static 'img/7.jpg' %}" id="img-1" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block color1">
+            <h5>Accounts</h5>
+            <p>Details of All Account Holders</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block body2 %}
+
+{% comment %} #d5d1e7 #ededed {% endcomment %}
+
+
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Account No.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Balance</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for a in acc %}
+
+        <tr >
+            <th scope="row">{{a.sno}}</th>
+            <td>{{a.Account_no}}</td>
+            <td>{{a.Name}}</td>
+            <td>{{a.email}}</td>
+            <td>{{a.Balance}}</td>
+            <td><form method="post" >{% csrf_token %}
+                <button type="submit" value={{a.sno}} name="transfer" class="btn btn-outline-secondary " >Transfer</button></form>
+            </td>
+        </tr>
+        
+{% endfor %}
+
+        
+    </tbody>
+</table>
+
+
+
+
+{% endblock %}
