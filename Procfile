@@ -1,1 +1,1 @@
-web: gunicorn SBS.wsgi --log-file -
+web: gunicorn SBS.wsgi --log-file=-
