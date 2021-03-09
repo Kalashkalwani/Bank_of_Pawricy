@@ -65,7 +65,7 @@ def transfer(request,x):
 
 
 def accounts(request):
-    acc = Accounts.objects.all()
+    acc = Accounts.objects.all().order_by('sno')
     params = {"acc":acc}
 
     if request.method == "POST":
