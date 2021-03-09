@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '!0esje&7dl6)+8bs%4gh5lfqi@ib%hmt!dr&mx=c10o!9-ewt+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["https://bank-of-lakhs.herokuapp.com/","http://127.0.0.1:8000/"]
+ALLOWED_HOSTS = [".herokuapp.com","127.0.0.1"]
 
 
 # Application definition

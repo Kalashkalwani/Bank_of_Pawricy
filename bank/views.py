@@ -25,8 +25,6 @@ def newtransaction(request):
         Amount = request.POST.get("Amount")
         status = False
 
-        print(sender,receiver)
-
         if int(sender) > 0 and int(receiver) > 0:
             sender_acc = Accounts.objects.get(sno = sender)
             receiver_acc = Accounts.objects.get(sno = receiver)
