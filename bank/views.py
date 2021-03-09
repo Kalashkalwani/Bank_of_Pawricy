@@ -59,7 +59,7 @@ def newtransaction(request):
 
 def transfer(request,x):
     x  = Accounts.objects.get(sno=x)
-    acc = Accounts.objects.all()
+    acc = Accounts.objects.all().order_by('sno')
     params = {"acc":acc,"x":x}
     return render(request,"newtransaction.html",params)
 
