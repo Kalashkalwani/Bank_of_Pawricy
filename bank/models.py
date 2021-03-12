@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Accounts(models.Model):
-    sno = models.AutoField(primary_key=True)
+    sno = models.IntegerField(primary_key=True)
     Account_no = models.CharField(max_length=30,unique=True)
     Name = models.CharField(max_length=50)
     email = models.EmailField()
