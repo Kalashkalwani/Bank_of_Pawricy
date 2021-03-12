@@ -24,6 +24,7 @@
 
 
 {% block body2 %}
+
 <form class="row g-3" style="text-align: center;" method="post" Action="/newtransaction">
 {% csrf_token %}
   <div class="col-md-6">
@@ -48,7 +49,9 @@
     <select id="inputState" name="receiver" class="form-select">
       <option value=0 selected>Choose...</option>
       {% for a in acc %}
+      {% if a.sno != x.sno %}
       <option value = {{a.sno}} >{{a.Name}}({{a.Account_no}})</option>
+      {% endif %}
       {% endfor %}
     </select>
   </div>
@@ -57,11 +60,14 @@
     <input type="number" name="Amount" class="form-control" id="inputAmount" min=0 max=99999999 required placeholder="5000">
   </div>
   
-
-  
   
   <div class="col-12">
     <button type="submit" class="btn btn-primary">Transfer</button>
   </div>
 </form>
+
+   
+
+
+
 {% endblock  %}
