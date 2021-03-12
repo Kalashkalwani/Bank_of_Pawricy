@@ -14,23 +14,25 @@ from pathlib import Path
 import django_heroku
 from django.contrib.messages import constants as messages
 import os
+import environ 
 
 # SECRET_KEY = os.environ['SECRET_KEY']
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+env = environ.Env(SECRET_KEY=str,)
+environ.Env.read_env(os.path.join(BASE_DIR,'.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!0esje&7dl6)+8bs%4gh5lfqi@ib%hmt!dr&mx=c10o!9-ewt+'
+SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DJANGO_DEBUG')
 
+ALLOWED_HOSTS = env('DJANGO_ALLOWED_HOSTS')
 ALLOWED_HOSTS = [".herokuapp.com","127.0.0.1"]
-
 
 # Application definition
 
@@ -113,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
