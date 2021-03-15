@@ -36,6 +36,7 @@ def newtransaction(request):
                 status = True
                 t = Transactions(sender_acc =sender_acc,receiver_acc=receiver_acc,Amount=Amount,status=status,date=datetime.now() )
                 t.save()
+                messages.success(request, 'Transaction Successfull')
                 return redirect("/transaction")
             
             else:
